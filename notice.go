@@ -5,10 +5,8 @@ import (
 	"net/http"
 )
 
-func getCreateNoticeURL(projectID int64, key string) string {
-	return fmt.Sprintf(
-		"https://airbrake.io/api/v3/projects/%d/notices?key=%s",
-		projectID, key)
+func getCreateNoticeURL(host, key string) string {
+	return fmt.Sprintf("https://%s/notifier_api/v2/notices?key=%s", host, key)
 }
 
 type Error struct {

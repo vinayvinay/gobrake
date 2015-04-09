@@ -32,11 +32,11 @@ type Notifier struct {
 	context         map[string]string
 }
 
-func NewNotifier(projectID int64, key string) *Notifier {
+func NewNotifier(host, key string) *Notifier {
 	n := &Notifier{
 		Client:          httpClient,
 		StackFilter:     stackFilter,
-		createNoticeURL: getCreateNoticeURL(projectID, key),
+		createNoticeURL: getCreateNoticeURL(host, key),
 		context: map[string]string{
 			"language":     runtime.Version(),
 			"os":           runtime.GOOS,
