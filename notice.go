@@ -6,7 +6,7 @@ import (
 )
 
 func getCreateNoticeURL(host, key string) string {
-	return fmt.Sprintf("https://%s/notifier_api/v2/notices?key=%s", host, key)
+	return fmt.Sprintf("http://%s/api/v3/projects/0/notices?key=%s", host, key)
 }
 
 type Error struct {
